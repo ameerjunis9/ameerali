@@ -1,0 +1,5 @@
+{
+  "name": "Copy of ShipShape AI",
+  "description": "An intelligent shipping label generator that uses Gemini to parse unstructured address text and autofill label details.",
+  "requestFramePermissions": []
+}
