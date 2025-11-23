@@ -6,7 +6,12 @@ const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 export const parseAddressWithGemini = async (rawText: string): Promise<Address | null> => {
   try {
     const model = "gemini-2.5-flash";
-    const prompt = `Parse the following unstructured address text into a structured JSON object. If a field is missing, leave it as an empty string. Infer the country if not specified based on state/city (default to US). Extract phone number if present. Text: "${rawText}"`;
+    const prompt = `Parse the following unstructured address text into a structured JSON object. 
+    Strictly IGNORE any Zip Codes or Postal Codes; do not include them in city or state. 
+    If a field is missing, leave it as an empty string. 
+    Infer the country if not specified based on state/city (default to US). 
+    Extract phone number if present. 
+    Text: "${rawText}"`;
 
     const response = await ai.models.generateContent({
       model: model,

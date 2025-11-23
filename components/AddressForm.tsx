@@ -121,7 +121,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ title, address, onChange, isS
             <div className="relative">
               <Phone size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
-                type="text"
+                type="tel"
                 value={address.phoneNumber}
                 onChange={(e) => handleChange('phoneNumber', e.target.value)}
                 className="w-full pl-8 pr-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm"
